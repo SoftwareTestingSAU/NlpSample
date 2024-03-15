@@ -1,0 +1,21 @@
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'style.css' %}" > 
+    </head>
+    <body>
+        <h1>Metin Analizi</h1>
+        <form method="post" class="cf" enctype="multipart/form-data">
+            {% csrf_token %}
+        <div class="half left cf">  
+            {{metin.secenekliste}}
+        </div>
+        <div class="half right cf">
+            {{metin.icerik}}
+        </div>  
+        <input type="submit" value="Gönder" id="input-submit" style="background-color: #e74c3c;">
+        </form>
+    </body>
+</html>
